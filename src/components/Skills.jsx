@@ -13,6 +13,7 @@ import pyspark from "../assets/pyspark.png";
 import azure from "../assets/azure.png";
 import aws from "../assets/aws.png";
 import powerbi from "../assets/powerbi.png";
+import openai from "../assets/OpenAI.png";
 
 const Skills = () => {
   const techs = [
@@ -93,6 +94,13 @@ const Skills = () => {
       src: pyspark,
       title: "Pyspark",
       style: "shadow-yellow-500",
+    }
+    ,
+    {
+      id: 14,
+      src: openai,
+      title: "OpenAI",
+      style: "shadow-green-500",
     }
   ];
 
