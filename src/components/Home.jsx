@@ -11,14 +11,15 @@ const Home = () => {
       style={{ backgroundImage: "linear-gradient(to bottom, #10061a, #9141d9)" }}
     >
       <div className="max-w-screen-lg mx-auto flex flex-col items-center justify-center h-full px-4 md:flex-row">
-        <div className="flex flex-col justify-center h-full">
+        <div className="flex flex-col justify-center h-full text-center md:text-left">
+        <br /> <br /> <br /> <br /> 
           <h2 className="text-4xl sm:text-6xl font-bold text-white">
             Hello<span className="wave text-4xl sm:text-6xl">👋</span>, My name is
           </h2>
           <h1 className="text-6xl sm:text-9xl font-bold text-green">
             Devprakash
           </h1>
-          <div>
+          <div className="flex justify-center md:justify-start">
             <Link
               to="about"
               smooth
@@ -32,15 +33,14 @@ const Home = () => {
             </Link>
           </div>
         </div>
-        <div className="flex items-center justify-right">
+        <div className="flex items-center justify-right mt-8 md:mt-0">
           <img
             src={me}
             alt="Me"
             style={{
-              maxWidth: "100%",
-              height: "auto",
-              maxHeight: "calc(100vh - 120px)", // Adjust the height based on your design
-              borderRadius: "20px",
+              width: "250px",
+              height: "250px",
+              borderRadius: "100%",
               boxShadow: "0px 0px 10px rgba(255, 255, 0, 0.5)",
             }}
           />
