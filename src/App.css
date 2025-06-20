@@ -1,38 +1,52 @@
 /* Default style for body */
 body {
-    display: flex;
-    flex-direction: column;
-    margin: 0; /* Remove default body margin */
+  display: flex;
+  flex-direction: column;
+  margin: 0; /* Remove default body margin */
 }
 
 /* Style for screens wider than 768px */
-@media only screen and (min-width: 768px) {
-    #left {
-        width: 30%;
-    }
+@media only screen and (min-width: 1000px) {
+  #left {
+    width: 100%;
+  }
 
-    #right {
-        width: 70%;
-    }
+  #right {
+    width: 100%;
+  }
 }
 
 /* Style for screens narrower than or equal to 768px */
 @media only screen and (max-width: 768px) {
-    #left, #right {
-        width: 100%;
-    }
+  #left,
+  #right {
+    width: 100%;
+  }
 }
 
 @media (min-width: 768px) {
-    .card-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
-    }
-  
-    .card {
-      width: calc(50% - 20px); /* Adjust the width as needed */
-      margin-bottom: 20px; /* Adjust the margin as needed */
-    }
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
   }
-  
+
+  .card {
+    width: calc(50% - 20px); /* Adjust the width as needed */
+    margin-bottom: 20px; /* Adjust the margin as needed */
+  }
+}
+
+.wave-divider {
+  width: 100%;
+  height: 120px;
+  background-color: #361540; /* Background matches Home section */
+  overflow: hidden;
+  line-height: 0;
+}
+
+.wave-svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
