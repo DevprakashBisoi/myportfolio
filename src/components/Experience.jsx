@@ -7,21 +7,24 @@ import bernoullium from "../assets/bernoullium.jpg";
 import ey from "../assets/ey.jpg";
 import "./Experience.css";
 
-
 //list all the companies I have worked for
 const Experience = () => {
   return (
-    <div name= "experience" className="bg-gradient-to-b from-black to-violet-600 w-full text-white md:h-screen">
-      <div className="max-w-screen-lg p-4 mx-auto flex flex-col justify-center w-full">
+    <div
+      name="experience"
+      className="min-h-screen w-full text-white"
+      style={{
+        backgroundImage: "linear-gradient(to bottom, #10061a, #9141d9)",
+      }}
+    >
+      <div className="max-w-screen-lg mx-auto flex flex-col items-left justify-left min-h-screen px-4 pt-24 md:pt-0 md:flex-row">
         <div className="pb-8">
           <p className="text-4xl font-bold inline border-b-4 border-gray-500">
             Experience
           </p>
         </div>
-
         <div className="flex justify-left gap-4 flex-wrap card-container">
-
-        <div className="card">
+          <div className="card">
             <img
               src={ey}
               alt="ey"
@@ -30,7 +33,6 @@ const Experience = () => {
             <p className="text-lg font-semibold mb-2">EY India</p>
             <p className="text-sm text-gray-700">July 2023 - Present</p>
           </div>
-
           <div className="card">
             <img
               src={netcon}
@@ -40,7 +42,6 @@ const Experience = () => {
             <p className="text-lg font-semibold mb-2">Netcon Technologies</p>
             <p className="text-sm text-gray-700">January 2023 - June 2023</p>
           </div>
-
           <div className="card">
             <img
               src={bernoullium}
@@ -50,7 +51,6 @@ const Experience = () => {
             <p className="text-lg font-semibold mb-2">Bernoullium</p>
             <p className="text-sm text-gray-700">December 2022 - June 2023</p>
           </div>
-
           <div className="card">
             <img
               src={altimetrik}
@@ -60,7 +60,6 @@ const Experience = () => {
             <p className="text-lg font-semibold mb-2">Altimetrik</p>
             <p className="text-sm text-gray-700">June 2022 - August 2022</p>
           </div>
-
           <div className="card">
             <img
               src={cloudbyz}
@@ -70,7 +69,6 @@ const Experience = () => {
             <p className="text-lg font-semibold mb-2">Cloudbyz</p>
             <p className="text-sm text-gray-700">June 2022 - August 2022</p>
           </div>
-
           <div className="card">
             <img
               src={kritikal}
@@ -87,4 +85,3 @@ const Experience = () => {
 };
 
 export default Experience;
-
