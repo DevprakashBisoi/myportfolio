@@ -34,7 +34,7 @@ function App() {
           xmlns="http://www.w3.org/2000/svg"
           style={{
             display: "block",
-            width: "120%",
+            width: "100%",
             height: "auto",
             margin: 0,
             padding: 0,
