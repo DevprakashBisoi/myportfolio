@@ -94,25 +94,27 @@ const Skills = () => {
       src: pyspark,
       title: "Pyspark",
       style: "shadow-yellow-500",
-    }
-    ,
+    },
     {
       id: 14,
       src: openai,
       title: "OpenAI",
       style: "shadow-green-500",
-    }
+    },
   ];
 
   return (
     <div
       name="skills"
       className="w-full min-h-screen text-white text-white"
-      style={{ backgroundImage: "linear-gradient(to bottom, #202020, #080808)" }}
+      style={{
+        backgroundImage: "linear-gradient(to bottom, #e66465, #9198e5)",
+      }}
     >
       <div className="max-w-screen-lg mx-auto p-4 flex flex-col justify-center w-full min-h-full text-white">
         <div>
-          <br /><br />
+          <br />
+          <br />
           <p className="text-4xl font-bold border-b-4 border-gray-500 p-2 inline">
             Skills
           </p>
