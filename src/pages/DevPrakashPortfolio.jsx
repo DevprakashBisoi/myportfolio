@@ -600,7 +600,7 @@ const NavBar = () => {
             zIndex: 810,
           }}
         >
-          D<span style={{ color: "var(--accent)" }}>.</span>P
+          D<span style={{ color: "var(--accent)" }}>.</span>B
         </a>
         <ul
           className="nav-links-wrap"
