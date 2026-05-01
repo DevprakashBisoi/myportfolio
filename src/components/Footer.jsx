@@ -19,7 +19,7 @@ const Footer = () => (
       textTransform: "uppercase",
     }}
   >
-    <span>© 2025 Devprakash</span>
+    <span>© 2026 Devprakash</span>
     <span>Associate Consultant · EY India · Bengaluru</span>
     <span>Built with craft, not templates</span>
   </footer>
