@@ -2250,7 +2250,6 @@ const Contact = () => (
         <Mag
           href="mailto:devprakashbisoi@gmail.com"
           extraStyle={{
-            borderColor: "rgba(245,242,236,.2)",
             color: "var(--paper)",
           }}
         >
