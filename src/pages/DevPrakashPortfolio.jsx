@@ -3,9 +3,7 @@ import Bootstrap from "../components/Bootstrap";
 import Cursor from "../components/Cursor";
 import Footer from "../components/Footer";
 
-/* 
-   SCROLL PROGRESS
- */
+/* SCROLL PROGRESS */
 const ScrollProgress = () => {
   const [p, setP] = useState(0);
   useEffect(() => {
