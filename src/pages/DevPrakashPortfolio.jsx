@@ -2252,9 +2252,8 @@ const Contact = () => (
         <Mag
           href="mailto:devprakashbisoi@gmail.com"
           extraStyle={{
-            background: "var(--paper)",
+            borderColor: "rgba(245,242,236,.2)",
             color: "var(--paper)",
-            borderColor: "var(--paper)",
           }}
         >
           Send Email
