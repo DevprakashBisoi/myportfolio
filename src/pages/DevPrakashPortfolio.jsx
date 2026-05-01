@@ -1,243 +1,11 @@
 import { useState, useEffect, useRef } from "react";
+import Bootstrap from "../components/Bootstrap";
+import Cursor from "../components/Cursor";
+import Footer from "../components/Footer";
 
-const Bootstrap = () => {
-  useEffect(() => {
-    const link = document.createElement("link");
-    link.rel = "stylesheet";
-    link.href =
-      "https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Serif+Display:ital@0;1&family=JetBrains+Mono:wght@300;400;500&family=Outfit:wght@300;400;500;600&display=swap";
-    document.head.appendChild(link);
-
-    const style = document.createElement("style");
-    style.textContent = `
-      :root {
-        --ink: #0a0a0f;
-        --paper: #f5f2ec;
-        --accent: #c8402a;
-        --gold: #c8a02a;
-        --muted: #6b6b6b;
-        --border: #d4cfc5;
-        --serif: 'DM Serif Display', Georgia, serif;
-        --sans: 'Outfit', sans-serif;
-        --mono: 'JetBrains Mono', monospace;
-        --display: 'Bebas Neue', sans-serif;
-      }
-      *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-      html { scroll-behavior: smooth; }
-      body {
-        background: var(--paper);
-        color: var(--ink);
-        font-family: var(--sans);
-        overflow-x: hidden;
-        cursor: none !important;
-      }
-      * { cursor: none !important; }
-      body::after {
-        content: '';
-        position: fixed; inset: 0;
-        background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.035'/%3E%3C/svg%3E");
-        pointer-events: none; z-index: 9000; opacity: 0.22;
-      }
-      ::-webkit-scrollbar { width: 3px; }
-      ::-webkit-scrollbar-track { background: var(--paper); }
-      ::-webkit-scrollbar-thumb { background: var(--accent); }
-      ::selection { background: var(--accent); color: var(--paper); }
-      @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
-      @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
-      @keyframes float { 0%,100%{transform:translateY(0)} 50%{transform:translateY(-10px)} }
-      @keyframes spin-slow { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
-      @keyframes fadeUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
-      @keyframes drawLine { from{width:0} to{width:100%} }
-      @keyframes pulse-ring {
-        0%{transform:scale(1);opacity:0.6}
-        50%{transform:scale(1.04);opacity:0.3}
-        100%{transform:scale(1);opacity:0.6}
-      }
-      @keyframes shimmer {
-        0%{background-position:-400px 0}
-        100%{background-position:400px 0}
-      }
-      @keyframes gridDot {
-        0%   { top: -6px; opacity: 0; }
-        10%  { opacity: 1; }
-        90%  { opacity: 1; }
-        100% { top: calc(100% + 6px); opacity: 0; }
-      }
-      .grid-line-wrap { position: absolute; top: 0; bottom: 0; width: 1px; overflow: visible; pointer-events: none; }
-      .grid-line-track { position: absolute; inset: 0; background: rgba(10,10,15,.035); }
-      .grid-dot {
-        position: absolute; left: 50%; transform: translateX(-50%);
-        width: 5px; height: 5px; border-radius: 50%;
-        background: radial-gradient(circle, rgba(200,180,60,1) 0%, rgba(200,160,42,.6) 50%, transparent 100%);
-        box-shadow: 0 0 8px 3px rgba(200,160,42,.55), 0 0 20px 6px rgba(200,160,42,.2);
-        animation: gridDot linear infinite;
-      }
-
-      /* ── RESPONSIVE ── */
-      @media (max-width: 1024px) {
-        .hero-grid       { grid-template-columns: 1fr !important; }
-        .about-grid      { grid-template-columns: 1fr !important; gap: 3rem !important; }
-        .exp-grid        { grid-template-columns: 1fr !important; }
-        .exp-tabs        { border-right: none !important; border-bottom: 1px solid var(--border) !important; display: flex !important; overflow-x: auto !important; scrollbar-width: none !important; }
-        .exp-tabs::-webkit-scrollbar { display: none; }
-        .exp-tab-item    { border-bottom: none !important; border-right: 1px solid var(--border) !important; min-width: 180px !important; flex-shrink: 0 !important; }
-        .skills-bars     { grid-template-columns: 1fr !important; }
-        .projects-grid   { grid-template-columns: repeat(2,1fr) !important; }
-        .nav-links-wrap  { display: none !important; }
-        .nav-hamburger   { display: flex !important; }
-        .nav-cta-wrap    { display: none !important; }
-      }
-      @media (max-width: 640px) {
-        .section-pad     { padding: 5rem 1.4rem !important; }
-        .hero-pad        { padding: 0 1.4rem !important; }
-        .nav-pad         { padding: 1rem 1.4rem !important; }
-        .stats-grid      { grid-template-columns: repeat(2,1fr) !important; }
-        .hero-profile    { display: none !important; }
-        .projects-grid   { grid-template-columns: 1fr !important; }
-        .contact-pad     { padding: 7rem 1.4rem !important; }
-        .footer-pad      { padding: 1.5rem 1.4rem !important; flex-direction: column !important; gap: .4rem !important; text-align: center !important; }
-        .social-sidebar  { display: none !important; }
-        .exp-tabs        { flex-direction: column !important; }
-        .exp-tab-item    { border-right: none !important; border-bottom: 1px solid var(--border) !important; min-width: unset !important; }
-      }
-
-      /* Hamburger hidden by default on desktop */
-      .nav-hamburger { display: none; cursor: none !important; }
-
-      /* Mobile slide-down menu */
-      .mobile-menu {
-        position: fixed; inset: 0; top: 60px;
-        background: rgba(245,242,236,.97);
-        backdrop-filter: blur(20px);
-        z-index: 790;
-        display: flex; flex-direction: column;
-        align-items: center; justify-content: center;
-        gap: 2.5rem;
-        transform: translateY(-110%);
-        transition: transform .4s cubic-bezier(.4,0,.2,1);
-        pointer-events: none;
-      }
-      .mobile-menu.open { transform: translateY(0); pointer-events: all; }
-      .mobile-menu a {
-        font-family: var(--display);
-        font-size: 2.8rem;
-        letter-spacing: .06em;
-        color: var(--ink);
-        text-decoration: none;
-        transition: color .2s;
-        cursor: none !important;
-      }
-      .mobile-menu a:hover { color: var(--accent); }
-    `;
-    document.head.appendChild(style);
-    return () => {
-      document.head.removeChild(link);
-      document.head.removeChild(style);
-    };
-  }, []);
-  return null;
-};
-
-/* ─────────────────────────────────────────────────────────
-   CURSOR
-───────────────────────────────────────────────────────── */
-const Cursor = () => {
-  const dotRef = useRef(null);
-  const ringRef = useRef(null);
-  const mouse = useRef({ x: -100, y: -100 });
-  const pos = useRef({ x: -100, y: -100 });
-  const [big, setBig] = useState(false);
-  const [clicked, setClicked] = useState(false);
-
-  useEffect(() => {
-    const mv = (e) => {
-      mouse.current = { x: e.clientX, y: e.clientY };
-    };
-    const dn = () => setClicked(true);
-    const up = () => setClicked(false);
-    document.addEventListener("mousemove", mv);
-    document.addEventListener("mousedown", dn);
-    document.addEventListener("mouseup", up);
-
-    const on = () => setBig(true),
-      off = () => setBig(false);
-    const sel = "a,button,[data-hover]";
-    const attach = () =>
-      document.querySelectorAll(sel).forEach((el) => {
-        el.addEventListener("mouseenter", on);
-        el.addEventListener("mouseleave", off);
-      });
-    attach();
-    const mo = new MutationObserver(attach);
-    mo.observe(document.body, { childList: true, subtree: true });
-
-    let raf;
-    const tick = () => {
-      pos.current.x += (mouse.current.x - pos.current.x) * 0.11;
-      pos.current.y += (mouse.current.y - pos.current.y) * 0.11;
-      if (dotRef.current)
-        dotRef.current.style.transform = `translate(${mouse.current.x - 5}px,${
-          mouse.current.y - 5
-        }px)`;
-      if (ringRef.current)
-        ringRef.current.style.transform = `translate(${pos.current.x - 20}px,${
-          pos.current.y - 20
-        }px)`;
-      raf = requestAnimationFrame(tick);
-    };
-    raf = requestAnimationFrame(tick);
-    return () => {
-      document.removeEventListener("mousemove", mv);
-      document.removeEventListener("mousedown", dn);
-      document.removeEventListener("mouseup", up);
-      cancelAnimationFrame(raf);
-      mo.disconnect();
-    };
-  }, []);
-
-  return (
-    <>
-      <div
-        ref={dotRef}
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          zIndex: 99999,
-          pointerEvents: "none",
-          width: clicked ? 6 : big ? 14 : 10,
-          height: clicked ? 6 : big ? 14 : 10,
-          background: big ? "var(--gold)" : "var(--accent)",
-          borderRadius: "50%",
-          transition: "width .18s,height .18s,background .18s",
-          willChange: "transform",
-          mixBlendMode: "multiply",
-        }}
-      />
-      <div
-        ref={ringRef}
-        style={{
-          position: "fixed",
-          top: 0,
-          left: 0,
-          zIndex: 99998,
-          pointerEvents: "none",
-          width: clicked ? 28 : big ? 54 : 40,
-          height: clicked ? 28 : big ? 54 : 40,
-          border: `1.5px solid ${big ? "var(--gold)" : "var(--accent)"}`,
-          borderRadius: "50%",
-          transition: "width .28s,height .28s,border-color .25s",
-          willChange: "transform",
-          opacity: 0.55,
-        }}
-      />
-    </>
-  );
-};
-
-/* ─────────────────────────────────────────────────────────
+/* 
    SCROLL PROGRESS
-───────────────────────────────────────────────────────── */
+ */
 const ScrollProgress = () => {
   const [p, setP] = useState(0);
   useEffect(() => {
@@ -272,9 +40,9 @@ const ScrollProgress = () => {
   );
 };
 
-/* ─────────────────────────────────────────────────────────
+/* 
    SCROLL REVEAL HOOK
-───────────────────────────────────────────────────────── */
+ */
 const useReveal = (threshold = 0.1) => {
   const ref = useRef(null);
   const [vis, setVis] = useState(false);
@@ -317,9 +85,9 @@ const Reveal = ({
   );
 };
 
-/* ─────────────────────────────────────────────────────────
+/* 
    ANIMATED COUNTER
-───────────────────────────────────────────────────────── */
+ */
 const Counter = ({ to, suffix = "", dur = 1600 }) => {
   const [n, setN] = useState(0);
   const [ref, vis] = useReveal(0.5);
@@ -343,9 +111,9 @@ const Counter = ({ to, suffix = "", dur = 1600 }) => {
   );
 };
 
-/* ─────────────────────────────────────────────────────────
+/* 
    MAGNETIC BUTTON
-───────────────────────────────────────────────────────── */
+ */
 const Mag = ({ children, href, primary, onClick, extraStyle = {} }) => {
   const ref = useRef(null);
   const mv = (e) => {
@@ -411,9 +179,9 @@ const Mag = ({ children, href, primary, onClick, extraStyle = {} }) => {
   );
 };
 
-/* ─────────────────────────────────────────────────────────
+/* 
    WAVY SECTION DIVIDER
-───────────────────────────────────────────────────────── */
+ */
 const WaveDivider = ({ fromColor, toColor, flip = false }) => (
   <div
     style={{
@@ -442,9 +210,9 @@ const WaveDivider = ({ fromColor, toColor, flip = false }) => (
   </div>
 );
 
-/* ─────────────────────────────────────────────────────────
+/* 
    SECTION LABEL
-───────────────────────────────────────────────────────── */
+ */
 const Label = ({ children, light }) => (
   <div
     style={{
@@ -471,9 +239,9 @@ const Label = ({ children, light }) => (
   </div>
 );
 
-/* ─────────────────────────────────────────────────────────
+/* 
    SOCIAL SIDEBAR
-───────────────────────────────────────────────────────── */
+ */
 const SocialLinks = () => (
   <div
     className="social-sidebar"
@@ -533,9 +301,9 @@ const SocialLinks = () => (
   </div>
 );
 
-/* ─────────────────────────────────────────────────────────
+/* 
    NAVBAR
-───────────────────────────────────────────────────────── */
+ */
 const NavBar = () => {
   const [scrolled, setScrolled] = useState(false);
   const [active, setActive] = useState("home");
@@ -1140,7 +908,7 @@ const Hero = () => {
           {[
             "LLM",
             "·",
-            "Vector DB",
+            "Python",
             "·",
             "Copilot Studio",
             "·",
@@ -1156,7 +924,7 @@ const Hero = () => {
             "·",
             "LLM",
             "·",
-            "Azure AI Search",
+            "Langgraph",
             "·",
             "Copilot Studio",
             "·",
@@ -1192,9 +960,9 @@ const Hero = () => {
   );
 };
 
-/* ─────────────────────────────────────────────────────────
+/* 
    ABOUT
-───────────────────────────────────────────────────────── */
+ */
 const About = () => {
   const facts = [
     {
@@ -1431,9 +1199,9 @@ const About = () => {
   );
 };
 
-/* ─────────────────────────────────────────────────────────
+/* 
    EXPERIENCE
-───────────────────────────────────────────────────────── */
+ */
 const Experience = () => {
   const [active, setActive] = useState(0);
   const exps = [
@@ -1859,9 +1627,9 @@ const Experience = () => {
   );
 };
 
-/* ─────────────────────────────────────────────────────────
+/* 
    SKILLS  ── CHANGE 3: futuristic categorised text layout
-───────────────────────────────────────────────────────── */
+ */
 const SKILL_CATEGORIES = [
   {
     icon: "⌨️",
@@ -2162,9 +1930,9 @@ const Skills = () => (
   </>
 );
 
-/* ─────────────────────────────────────────────────────────
+/* 
    PROJECTS
-───────────────────────────────────────────────────────── */
+ */
 const ProjCard = ({ num, title, desc, impact, tech, delay: d }) => {
   const [hov, setHov] = useState(false);
   return (
@@ -2380,9 +2148,9 @@ const Projects = () => {
   );
 };
 
-/* ─────────────────────────────────────────────────────────
+/* 
    CONTACT
-───────────────────────────────────────────────────────── */
+ */
 const Contact = () => (
   <>
     <WaveDivider fromColor="var(--paper)" toColor="var(--ink)" />
@@ -2514,37 +2282,9 @@ const Contact = () => (
   </>
 );
 
-/* ─────────────────────────────────────────────────────────
-   FOOTER
-───────────────────────────────────────────────────────── */
-const Footer = () => (
-  <footer
-    className="footer-pad"
-    style={{
-      background: "#050508",
-      color: "rgba(245,242,236,.28)",
-      padding: "1.8rem 4rem",
-      display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      flexWrap: "wrap",
-      gap: ".5rem",
-      borderTop: "1px solid rgba(245,242,236,.05)",
-      fontFamily: "var(--mono)",
-      fontSize: ".6rem",
-      letterSpacing: ".1em",
-      textTransform: "uppercase",
-    }}
-  >
-    <span>© 2025 Devprakash</span>
-    <span>Associate Consultant · EY India · Bengaluru</span>
-    <span>Built with craft, not templates</span>
-  </footer>
-);
-
-/* ─────────────────────────────────────────────────────────
+/* 
    APP ROOT
-───────────────────────────────────────────────────────── */
+ */
 export default function App() {
   return (
     <>
