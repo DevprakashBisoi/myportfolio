@@ -1658,6 +1658,7 @@ const SKILL_CATEGORIES = [
     items: [
       "LLM Engineering",
       "Langchain",
+      "Langgraph",
       "RAG Pipelines",
       "Prompt Engineering",
       "Multi-Agent Systems",
