@@ -983,7 +983,7 @@ const About = () => {
       icon: "✍️",
       label: "Beyond Work",
       value:
-        "Horror & fantasy fiction · Karate\nBasketball · Precious metals investing",
+        "Horror & fantasy fiction · Karate\nBasketball · Social Service",
     },
   ];
   const badges = [
