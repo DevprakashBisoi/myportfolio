@@ -734,7 +734,7 @@ const Hero = () => {
               }}
             >
               {[
-                { val: 2, suf: "+", label: "Years at EY" },
+                { val: 3, suf: "+", label: "Years of Experience" },
                 { val: 5, suf: "", label: "Internships" },
                 { val: 4, suf: "", label: "Tech stacks shipped" },
                 { val: 3, suf: "", label: "Enterprise clients" },
