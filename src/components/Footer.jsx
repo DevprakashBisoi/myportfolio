@@ -20,7 +20,7 @@ const Footer = () => (
     }}
   >
     <span>© 2026 Devprakash</span>
-    <span>Associate Consultant · EY India · Bengaluru</span>
+    <span>Technical Consultant · HCLTECH · Bengaluru</span>
     <span>Built with craft, not templates</span>
   </footer>
 );
