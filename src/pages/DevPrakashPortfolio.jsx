@@ -470,7 +470,7 @@ const NavBar = () => {
 };
 
 const TYPING_LINES = [
-  "Associate Consultant",
+  "Technical Consultant",
   "AI/ML Engineer",
   "GenAI Architect",
   "Systems Builder",
@@ -631,7 +631,7 @@ const Hero = () => {
                   background: "var(--accent)",
                 }}
               />
-              Associate Consultant · EY India · Bengaluru
+              Technical Consultant · HCLTech · Bengaluru
             </div>
           </Reveal>
 
@@ -866,7 +866,7 @@ const Hero = () => {
                   lineHeight: 1,
                 }}
               >
-                EY
+                HCLTech
               </div>
               <div
                 style={{
@@ -972,7 +972,7 @@ const About = () => {
     {
       icon: "🏢",
       label: "Current Role",
-      value: "Associate Consultant\nEY India · 2+ Years",
+      value: "Technical Consultant\nHCLTech",
     },
     {
       icon: "🌐",
@@ -988,6 +988,7 @@ const About = () => {
   ];
   const badges = [
     "PES University",
+    "HCLTech",
     "EY India",
     "Bengaluru",
     "Fiction Writer",
