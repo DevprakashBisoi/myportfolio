@@ -1205,7 +1205,7 @@ const Experience = () => {
   const [active, setActive] = useState(0);
   const exps = [
     {
-      date: "2023 — Present",
+      date: "2023 — 2026",
       company: "EY India (Ernst & Young)",
       type: "Full-Time",
       role: "Associate Consultant — AI/ML & GenAI",
