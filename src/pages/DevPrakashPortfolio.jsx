@@ -473,7 +473,7 @@ const TYPING_LINES = [
   "Technical Consultant",
   "AI/ML Engineer",
   "GenAI Architect",
-  "Systems Builder",
+  "Forward deployed engineer",
 ];
 
 const Hero = () => {
