@@ -1205,6 +1205,28 @@ const Experience = () => {
   const [active, setActive] = useState(0);
   const exps = [
     {
+      date: "2026 — Present",
+      company: "HCLTech",
+      type: "Full-Time",
+      role: "Technical Consultant",
+      desc: "Partnering with a global automotive/logistics client to translate business requirements into scalable reporting frameworks and technical architectures. Own root-cause analysis, automated validation and query optimization across high-concurrency production systems, alongside fault-tolerant AWS pipeline design for batch ingestion and schema transformation.",
+      impact: [
+        "Accelerated root-cause analysis via automated validation frameworks, reducing production discrepancy resolution time",
+        "Query-optimized relational execution plans and multi-source reconciliation scripts for low-latency access at scale",
+        "Engineered fault-tolerant AWS pipelines spanning hybrid cloud and legacy on-prem systems",
+        "Built cross-functional bridge between product, business, and engineering stakeholders on reporting architecture",
+      ],
+      tags: [
+        "AWS",
+        "SQL",
+        "Data Engineering",
+        "ETL",
+        "Python",
+        "Data Forensics",
+        "CI/CD"
+      ],
+    },
+    {
       date: "2023 — 2026",
       company: "EY India (Ernst & Young)",
       type: "Full-Time",
